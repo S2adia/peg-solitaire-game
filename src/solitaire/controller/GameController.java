@@ -151,12 +151,7 @@ public class GameController {
             if (currentMode.hasBoard()
                     && currentMode.getStatus() == GameStatus.PLAYING) {
                 currentMode.setRecording(true);
-                // Anchor the recording with a snapshot so replay can
-                // reconstruct from this mid-game state.
-                GameRecord rec = currentMode.getRecord();
-                if (rec != null) {
-                    rec.addRandomize(currentMode.getBoard().getGrid());
-                }
+                //start recoding
                 window.setRecordingActive(true);
             }
             // Pre-game: onNewGame will arm recording when a game starts.
